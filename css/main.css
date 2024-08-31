@@ -1,0 +1,247 @@
+:root {
+    --main-site-color: #e65f78;
+    --main-transition-time: 0.3s;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat", sans-serif;
+}
+.text-main {
+    color: var(--main-site-color);
+}
+.settings {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    position: fixed;
+    top: 30%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.w-max {
+    max-width: 500px;
+    margin: 0 auto;
+}
+textarea {
+    resize: vertical;
+}
+/*START OF NAV BAR*/
+.bg-custom {
+    background-color: rgba(0,0,0,0.7);
+}
+.nav-link {
+    color: white;
+}
+.navbar-nav .nav-link{
+    position: relative;
+}
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 8px;
+    right: 100%;
+    transition: right var(--main-transition-time) ease;
+}
+.navbar-nav .nav-link.active::after, .navbar-nav .nav-link:hover::after {
+    right: 8px;
+}
+.navbar-nav .nav-link.active {
+    color: var(--main-site-color);
+}
+.navbar-nav .nav-link:hover {
+    color: var(--main-site-color);
+}
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px var(--main-site-color);
+}
+/*END OF NAV BAR*/
+
+
+/*START OF HEADER SECTION*/
+.home {
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) ,url(../images/header-bg.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.home .container {
+    margin-top: 56px;
+}
+.home span::after {
+    content: " |";
+    animation-name: type-writer;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.home .btn-custom {
+    color: white;
+    border: 1px solid white;
+}
+.home .btn-custom:hover {
+    color: black;
+    background-color: white;
+}
+.home .shape {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    bottom: 30px;
+    border-radius: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: jump;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+.home .shape::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background-color: white;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*END   OF HEADER SECTION*/
+
+
+
+/*START OF ABOUT SECTION */
+.about ul li {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #CCC;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--main-transition-time) ease;
+    cursor: pointer;
+}
+.about ul li:hover {
+    border-color: var(--main-site-color);
+    color: var(--main-site-color);
+}
+/*END OF ABOUT SECTION*/
+
+
+/* START OF CLIENT SECTION */
+.client {
+    background-color: #EEE;
+}
+.client .slider-p {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.client .caroussel-p {
+    max-width: 450px;
+    text-align: center;
+}
+.client .slider i {
+    font-size: 50px;
+    color: var(--main-site-color);
+}
+.client .slider img {
+    border-radius: 50%;
+}
+.client .carousel-indicators [data-bs-target] {
+    background-color: var(--main-site-color);
+    width: 30px;
+    height: 8px;
+    border-radius: 45%;
+}
+/* END OF CLIENT SECTION */
+
+/* START OF PORTFOLIO */
+.portfolio .nav-tabs {
+    border-bottom: 0;
+}
+.portfolio .nav-tabs .nav-link {
+    border-radius: 10px;
+    color: black;
+}
+.portfolio .nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+.portfolio .nav-tabs .nav-link.active {
+    color: white;
+    border-radius: 10px;
+    background-color: var(--main-site-color);
+}
+
+
+/* .portfolio .item {
+    position: relative;
+} */
+.portfolio .item:hover .headers {
+    top: 50%;
+}
+.portfolio .item .headers {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: top var(--main-transition-time) ease;
+    z-index: 1;
+}
+.portfolio .item img {
+    transition: all var(--main-transition-time) ease;
+}
+.portfolio .item:hover img {
+    transform: scale(1.5);
+}
+.portfolio .item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: all var(--main-transition-time) ease;
+}
+.portfolio .item:hover::after {
+    opacity: 1;
+}
+/* END   OF PORTFOLIO*/
+
+/*START OF BLOG*/
+.blog {
+    background-color: #EEE;
+}
+.blog .card {
+    border: 0;
+}
+/*END  OF BLOG*/
+/*START OF CONTACT */
+.contact .blog-p {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact .item i {
+    font-size: 50px;
+    color: var(--main-site-color);
+}
+.contact form .form-control:focus {
+    box-shadow: 0 0 0 2px var(--main-site-color);
+    border-color: var(--main-site-color);
+}
+.contact .btn-form {
+    background-color: var(--main-site-color);
+    color: white;
+    padding: 20px 30px;
+    text-align: end;
+}
+/*END  OF CONTACT*/
